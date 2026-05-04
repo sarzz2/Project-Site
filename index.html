@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacStats - Modern System Monitor for macOS</title>
+    <meta name="description" content="MacStats is a modern, highly interactive system monitor for the macOS menu bar. Track CPU, GPU, RAM, Disk, and Network in real-time.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <nav class="glass">
+            <div class="logo">
+                <i data-lucide="activity"></i>
+                <span>MacStats</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="https://github.com/sarzz2/macStats" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/sarzz2/macStats/releases/download/v1.0.0/MacStats.dmg" class="btn-primary">Download</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-up">Monitor Your Mac with <span class="gradient-text">Precision</span>.</h1>
+                    <p class="animate-up delay-1">A modern, highly interactive system monitor for the macOS menu bar. Native SwiftUI, lightweight, and powerful.</p>
+                    <div class="hero-btns animate-up delay-2">
+                        <a href="https://github.com/sarzz2/macStats/releases/download/v1.0.0/MacStats.dmg" class="btn-large">
+                            <i data-lucide="download"></i>
+                            <span>Download for Mac</span>
+                        </a>
+                        <a href="https://github.com/sarzz2/macStats" class="btn-secondary">
+                            <i data-lucide="github"></i>
+                            <span>View Source</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-showcase animate-fade-in delay-3">
+                    <img src="https://github.com/user-attachments/assets/f1333ef1-d685-46d2-858b-0d24ff94ef37" alt="MacStats Screenshot 1" class="showcase-img side-left">
+                    <img src="https://github.com/user-attachments/assets/fea5557a-e202-4321-b2e9-0ebd592ece0f" alt="MacStats Screenshot 2" class="showcase-img center">
+                    <img src="https://github.com/user-attachments/assets/a55f3993-67e1-4fc2-98ca-c82c0d4afa90" alt="MacStats Screenshot 3" class="showcase-img side-right">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Everything you need to track.</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass">
+                        <i data-lucide="cpu"></i>
+                        <h3>CPU Monitoring</h3>
+                        <p>4x4 Core Grid, Usage %, and Top Processes filter excluding system daemons.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i data-lucide="component"></i>
+                        <h3>GPU Dashboard</h3>
+                        <p>Radial Gauge usage and Temperature stats for your graphics hardware.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i data-lucide="database"></i>
+                        <h3>Memory Usage</h3>
+                        <p>Real-time RAM monitoring with detailed breakdown of wired and active memory.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i data-lucide="hard-drive"></i>
+                        <h3>Disk Speed</h3>
+                        <p>Read/Write speeds with an interactive bidirectional graph.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i data-lucide="wifi"></i>
+                        <h3>Network Traffic</h3>
+                        <p>Upload/Download speeds with local IP display in your menu bar.</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i data-lucide="thermometer"></i>
+                        <h3>Sensors</h3>
+                        <p>Thermal pressure and temperature sensors with full Apple Silicon support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container glass">
+                <h2>Ready to take control?</h2>
+                <p>Download MacStats today and keep your system in check.</p>
+                <a href="https://github.com/sarzz2/macStats/releases/download/v1.0.0/MacStats.dmg" class="btn-large">
+                    <i data-lucide="download"></i>
+                    <span>Download MacStats.dmg</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MacStats. Built with SwiftUI for macOS.</p>
+            <div class="footer-links">
+                <a href="https://github.com/sarzz2/macStats"><i data-lucide="github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Simple scroll animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
